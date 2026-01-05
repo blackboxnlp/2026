@@ -1,0 +1,59 @@
+---
+import Subtitle from '@/components/mdx/Subtitle.astro';
+import Speaker from './Speaker.astro';
+
+interface Props {
+    organizers?: Array<{
+      image_path: string;
+      name: string;
+      affiliation: string;
+      description: string;
+      link: string;
+    }>;
+    organizers_email: string;
+}
+
+const { organizers = [], organizers_email } = Astro.props as Props;
+---
+<br>
+{organizers.length > 0 && (
+  <Subtitle>Organizers</Subtitle>
+  <div id="organizers-container" class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
+    {organizers.map((org) => (
+      <div class="organizer-item">
+        <Speaker
+          image_path={org.image_path}
+          name={org.name}
+          affiliation={org.affiliation}
+          description={org.description}
+          link={org.link}
+        />
+      </div>
+    ))}
+  </div>
+)}
+
+  <script>
+    // Client-side shuffle function
+    function shuffleArray(array) {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+    
+    // Shuffle organizers on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('organizers-container');
+      if (container) {
+        const items = Array.from(container.querySelectorAll('.organizer-item'));
+        const shuffledItems = shuffleArray(items);
+        
+        // Clear container and append shuffled items
+        container.innerHTML = '';
+        shuffledItems.forEach(item => container.appendChild(item));
+      }
+    });
+</script>
