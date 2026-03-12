@@ -279,7 +279,7 @@ const site_config: SiteConfig = {
             name: "Dana Arad",
             affiliation: "PhD Candidate, Technion",
             description: "",
-            link: "https://www.linkedin.com/in/dana-arad"
+            link: "https://danaarad.github.io/"
         },
         {
             image_path: "/2026/martin.png",
