@@ -270,7 +270,7 @@ const site_config: SiteConfig = {
         {
             image_path: "/2026/gabriele.jpg",
             name: "Gabriele Sarti",
-            affiliation: "PhD Candidate, University of Groningen",
+            affiliation: "Postdoc, Northeastern University",
             description: "",
             link: "https://gsarti.com"
         },
@@ -280,33 +280,47 @@ const site_config: SiteConfig = {
             affiliation: "PhD Candidate, Technion",
             description: "",
             link: "https://www.linkedin.com/in/dana-arad"
+        },
+        {
+            image_path: "/2026/martin.png",
+            name: "Martin Tutek",
+            affiliation: "Postdoc, University of Zagreb",
+            description: "",
+            link: "https://mttk.github.io/"
+        },
+        {
+            image_path: "/2026/nils.png",
+            name: "Nils Feldhus",
+            affiliation: "Postdoc, TU Berlin and DFKI",
+            description: "",
+            link: "https://nfelnlp.github.io/"
         }
     ],
     faq_items: [
-        {
-            question: "How are virtual poster sessions organized?",
-            answer: "Virtual poster sessions will be held on Gather.town. The links to the virtual poster sessions will be available on the Underline page of the BlackboxNLP workshop."
-        },
+        // {
+        //     question: "How are virtual poster sessions organized?",
+        //     answer: "Virtual poster sessions will be held on Gather.town. The links to the virtual poster sessions will be available on the Underline page of the // BlackboxNLP workshop."
+        // },
         {
             question: "Are dual submissions allowed?",
-            answer: "Yes, dual submissions are allowed if the other venue also allows dual submissions. If your submission is accepted to the archival track of BlackboxNLP, you will have to withdraw your submission to the other venue. Dual submissions to BlackboxNLP and EMNLP (including ARR) are not allowed."
+            answer: "Yes, dual submissions are allowed if the other venue also allows dual submissions. If your submission is accepted to the archival track of BlackboxNLP, you will have to withdraw your submission to the other venue."
         },
-        {
-            question: "How many models/tasks should I evaluate for the shared task?",
-            answer: "Submissions to the Circuit Localization track should evaluate at least two models and two tasks, while there are no restrictions on the number of models and tasks for the Causal Variable Localization track. However, for any submission (regardless of the track) to be considered for our final ranking, it must be evaluated at least on the three less resource-intensive settings in MIB, namely: (1) GPT-2 on IOI (2) Qwen-2.5 on IOI; and (3) Qwen-2.5 on MCQA."
-        },
-        {
-            question: "How are the shared task submissions evaluated?",
-            answer: "Shared task submissions will be evaluated by the workshop organizers and MIB creators based on the novelty and effectiveness of the proposed method. In practice, including more model-task combinations in the evaluation will strengthen high-scoring submissions by demonstrating the generality of the proposed method's effectiveness. Novelty will be evaluated in light of currently established methods for each one of the tracks."
-        },
-        {
-            question: "Are submissions to the shared task archival?",
-            answer: "Yes, submissions to the shared task will be considered archival, and will be published in the BlackboxNLP 2025 workshop proceedings on the ACL Anthology."
-        },
-        {
-            question: "How are shared task reports evaluated?",
-            answer: "Shared task reports will be evaluated by the workshop organizers to assess whether they meet the requirements for archival publication."
-        }
+        // {
+        //     question: "How many models/tasks should I evaluate for the shared task?",
+        //     answer: "Submissions to the Circuit Localization track should evaluate at least two models and two tasks, while there are no restrictions on the number of // models and tasks for the Causal Variable Localization track. However, for any submission (regardless of the track) to be considered for our final ranking, // it must be evaluated at least on the three less resource-intensive settings in MIB, namely: (1) GPT-2 on IOI (2) Qwen-2.5 on IOI; and (3) Qwen-2.5 on MCQA."
+        // },
+        // {
+        //     question: "How are the shared task submissions evaluated?",
+        //     answer: "Shared task submissions will be evaluated by the workshop organizers and MIB creators based on the novelty and effectiveness of the proposed // method. In practice, including more model-task combinations in the evaluation will strengthen high-scoring submissions by demonstrating the generality of // the proposed method's effectiveness. Novelty will be evaluated in light of currently established methods for each one of the tracks."
+        // },
+        // {
+        //     question: "Are submissions to the shared task archival?",
+        //     answer: "Yes, submissions to the shared task will be considered archival, and will be published in the BlackboxNLP 2025 workshop proceedings on the ACL // Anthology."
+        // },
+        // {
+        //     question: "How are shared task reports evaluated?",
+        //     answer: "Shared task reports will be evaluated by the workshop organizers to assess whether they meet the requirements for archival publication."
+        // }
     ]
 };
 
