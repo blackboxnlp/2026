@@ -3,8 +3,6 @@ import MainLayout from '@/layouts/MainLayout.astro';
 import { custom_style_components } from "@/layouts/MainLayout.astro";
 import site_config from '@/config/site_config.json';
 
-import SharedTask from '@/pages/shared_task.mdx';
-
 interface Props {
   title: string,
   description: string,
@@ -61,10 +59,4 @@ const {
   x_link={x_link}
   bluesky_link={bluesky_link}
   github_link={github_link}
->
-<section class="overflow-hidden relative">
-  <div class="pt-8 max-w-4xl">
-    <SharedTask components={custom_style_components} />
-  </div>
-</section>
-</MainLayout>
+/>
