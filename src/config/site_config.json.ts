@@ -75,6 +75,7 @@ const site_config: SiteConfig = {
     nav_items: [
         // { name: "Accepted Papers", href: "/2026/accepted_papers" },
         { name: "Call for Papers", href: "/2026/call" },
+        { name: "Reproducibility Track", href: "/2026/reproducibility" },
         // { name: "Shared Task", href: "/2026/task" },
         { name: "News", href: "/2026/#news" },
         // { name: "Program", href: "/2026/#program" },

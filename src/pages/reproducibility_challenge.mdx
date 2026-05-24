@@ -1,0 +1,35 @@
+# The BlackboxNLP 2026 Reproducibility Challenge
+
+## Description
+
+The BlackboxNLP 2026 Reproducibility Challenge invites participants to build upon and strengthen recent work published in the NLP community by conducting rigorous robustness checks of published results. Inspired by initiatives such as the ML Reproducibility Challenge — whose goal is to investigate reproducibility of papers accepted at top conferences and test the generalizability of scientific findings by adding novel insights and empirical results ([MLRC 2025](https://reproml.org/)). Specifically, we encourage participants to examine the strength of baselines (including random and trivial baselines), explore how well findings generalize across datasets, languages, and experimental settings, and conduct targeted ablations to shed light on which components of a system actually drive its reported gains.
+
+Various works have historically raised concerns regarding core interpretability methods. Probing classifiers, feature attribution, SAEs, and causal analysis can provide plausible explanations even for randomly initialized networks (*dead salmons*; \[3\]), linear probes might exploit surface-level textual leakage \[6\], SAE-based tools exhibit pathological reconstruction errors \[4\], and methods such as activation oracles are just difficult to use in practice \[2\]. Encouragingly, negative results need not be the end of the story, as with methodological rigor, one can unlock the genuine potential of NLP interpretability tools such as SAEs \[1\]. These works provide critical and/or positive, yet highly valuable insights into the practical difficulties of NLP interpretability work, but often lack an appropriate venue, as their scope tends to be quite narrow. Our goal is to provide a platform for reproducibility work focused on NLP interpretability.
+
+Concretely, participants are invited to revisit various aspects of selected papers, along one or more of the following **themes**:
+
+- **Baselines**: contributions can revisit the experimental baselines of a chosen paper, whether by investing more effort in hyperparameter tuning, strengthening trivial baselines, or incorporating more recent, competitive methods to ensure that the reported results hold up under rigorous comparison.
+- **Ablation**: using the original codebase, contribute through a systematic exploration of the methodological design space by performing ablation studies on introduced methodological components to clarify which are truly responsible for the key findings.
+- **Generalizability**: investigate whether a method's success is robust beyond its original experimental scope. Contributions to this theme can assess performance across different models, tasks, or tooling environments (NDIF/nnsight).
+- **Benchmarking and evaluation**: this theme assesses how a method's outcomes are measured and extends the evaluation setup by either including human evaluation of practical utility or applying alternative or complementary metrics, thereby broadening the stress testing used in the original work.
+
+This challenge focuses not on questioning the validity of prior work, but on enriching it. All tracks explicitly welcome and encourage negative results as valuable evidence about the boundary conditions of claims.
+
+## Timeline
+
+- **Expression of interest due**: May 31st, 2026
+- **Submissions due**: July 31st, 2026
+
+## References
+
+- \[1\] Dana Arad, Aaron Mueller, and Yonatan Belinkov. "[SAEs are good for steering – if you select the right features](https://aclanthology.org/2025.emnlp-main.519/)" EMNLP, 2025.
+- \[2\] Arya Jakkli, Senthooran Rajamanoharan, Neel Nanda. "[Current activation oracles are hard to use](https://www.lesswrong.com/posts/LXQBcztrWKhtcgQfJ/current-activation-oracles-are-hard-to-use)." LessWrong, 2026.
+- \[3\] Maxime Méloux et al. "The Dead Salmons of AI Interpretability" [https://arxiv.org/abs/2512.18792](https://arxiv.org/abs/2512.18792). Arxiv, 2025.
+- \[4\] Wes Gurnee. "[SAE Reconstruction Errors are Empirically Pathological](https://www.lesswrong.com/posts/rZPiuFxESMxCDHe4B/sae-reconstruction-errors-are-empirically-pathological)". LessWrong, 2024.
+- \[5\] Boxo, Gerard et al. "Linear probes rely on textual evidence: Results from leakage mitigation studies in language models" [https://arxiv.org/abs/2509.21344](https://arxiv.org/abs/2509.21344). Arxiv, 2025.
+- \[6\] Nanda, Neel et al. "Emergent Linear Representations in World Models of Self-Supervised Sequence Models" [https://aclanthology.org/2023.blackboxnlp-1.2/](https://aclanthology.org/2023.blackboxnlp-1.2/). BlackboxNLP, 2023.
+- \[7\] Bolukbasi, Tolga et al. "An Interpretability Illusion for BERT" [https://arxiv.org/abs/2104.07143](https://arxiv.org/abs/2104.07143). Arxiv, 2021.
+
+## Questions?
+
+Reach out to [blackboxnlp@googlegroups.com](mailto:blackboxnlp@googlegroups.com)and we will get back to you.
