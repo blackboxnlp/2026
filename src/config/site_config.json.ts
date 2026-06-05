@@ -264,7 +264,7 @@ const site_config: SiteConfig = {
         {
             image_path: "/2026/hosein.jpg",
             name: "Hosein Mohebbi",
-            affiliation: "PhD Candidate, Tilburg University",
+            affiliation: "AI Researcher at Whispp & Postdoc at University of Amsterdam",
             description: "",
             link: "https://hmohebbi.github.io/"
         },
