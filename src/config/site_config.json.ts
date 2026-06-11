@@ -70,7 +70,7 @@ const site_config: SiteConfig = {
     main_conf: "EMNLP 2026",
     main_conf_link: "https://2026.emnlp.org",
     location: "Budapest, Hungary",
-    date: "October 28th, 2026",
+    date: "October 29th, 2026",
     nav_title: "BlackboxNLP",
     nav_items: [
         // { name: "Accepted Papers", href: "/2026/accepted_papers" },
