@@ -18,7 +18,7 @@ const { sponsors = [] } = Astro.props as Props;
     {sponsors.map((sponsor) => (
       <div class="mt-auto sm:max-w-80">
         <a class="flex flex-row" href={sponsor.link} target="_blank" rel="noopener noreferrer">
-          <img src={sponsor.image_path} alt="Sponsor Logo" class="h-16 w-auto" />
+          <img src={sponsor.image_path} alt="Sponsor Logo" class="h-24 w-auto" />
         </a>
       </div>
     ))}

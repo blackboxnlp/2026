@@ -229,16 +229,12 @@ const site_config: SiteConfig = {
     //         link: "/2025"
     //     },
     // ],
-    sponsors: [],
-    //     {
-    //         image_path: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Google_DeepMind_logo.svg",
-    //         link: "https://deepmind.google/"
-    //     },
-    //     {
-    //         image_path: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Apple_logo_grey.svg",
-    //         link: "https://machinelearning.apple.com/",
-    //     }
-    // ],
+    sponsors: [
+        {
+            "image_path": "https://ndif.us/images/NDIF_Acr_color.png",
+            "link": "https://ndif.us/"
+        }
+    ],
     organizers: [
         {
             image_path: "/2026/yonatan.jpg",
