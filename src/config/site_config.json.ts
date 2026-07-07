@@ -288,7 +288,7 @@ const site_config: SiteConfig = {
         {
             image_path: "/2026/nils.png",
             name: "Nils Feldhus",
-            affiliation: "Postdoc, TU Berlin and BIFOLD",
+            affiliation: "Postdoc, University of Groningen",
             description: "",
             link: "https://nfelnlp.github.io/"
         }
