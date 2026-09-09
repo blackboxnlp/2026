@@ -76,14 +76,12 @@ const site_config: SiteConfig = {
         // { name: "Accepted Papers", href: "/2026/accepted_papers" },
         { name: "Call for Papers", href: "/2026/call" },
         { name: "Reproducibility Track", href: "/2026/reproducibility" },
-        // { name: "Shared Task", href: "/2026/task" },
         { name: "News", href: "/2026/#news" },
-        // { name: "Program", href: "/2026/#program" },
+        { name: "Program", href: "/2026/#program" },
     ],
     buttons: [
         // { name: "Accepted Papers", href: "/2026/accepted_papers" },
         { name: "Call for Papers", href: "/2026/call" },
-        // { name: "Shared Task", href: "/2026/task" },
     ],
     anthology_link: "https://aclanthology.org/venues/blackboxnlp/",
     email_link: "mailto:blackboxnlp@googlegroups.com",
@@ -184,24 +182,33 @@ const site_config: SiteConfig = {
         // }
     ],
     invited_speakers: [
-        // {
-        //     image_path: "https://sjtu-xai-lab.github.io/img/zqs.png",
-        //     name: "Quanshi Zhang",
-        //     affiliation: "Associate Professor, Shanghai Jiao Tong University",
-        //     description: "Talk: Can Neural Network Interpretability Be the Key to Breaking Through Scaling Law Limitations in Deep Learning?",
-        //     link: "https://sjtu-xai-lab.github.io/#people",
-        //     abstract: "The “lack of interpretability” and the “constraints of the scaling law” are two major bottlenecks in deep learning, but they fundamentally converge on the same root cause—the absence of a foundational explanation, localization, and debugging representation problems of a neural network. Currently, most explainable AI research remains at the engineering level, and fails to build up a theoretical connection between the “detailed knowledge representation” and “generalization power.” The interaction-based Interpretability theory proposed by Dr. Quanshi Zhang has partially addressed these issues from a new perspective. It rigorously demonstrates that the complex inference logic of neural networks can be comprehensively summarized as sparse interactions. Based on these interactions, the theory successfully explains the root causes of neural network performance, thereby breaking free from the black-box training paradigm. This enables real-time monitoring and correction of model representation flaws, improving training and testing efficiency, and ultimately overcoming the constraints of the scaling law.",
-        //     bio: "Dr. Quanshi Zhang is a tenured associate professor in the Department of Computer Science and Engineering at Shanghai Jiao Tong University. He has received the ACM China Rising Star Award. He obtained his Ph.D. from the University of Tokyo, Japan in 2014 and conducted postdoctoral research at the University of California, Los Angeles (UCLA) from 2014 to 2018. Dr. Zhang’s research mainly focuses on explainable AI, and has proposed theory system of interaction-based explanation. He serves as an action editor for TMLR, area chair for NeurIPS 2024 and 2025, presented tutorials on interpretability at IJCAI 2020 and IJCAI 2021."
-        // },
-        // {
-        //     image_path: "/2025/verna.jpg",
-        //     name: "Verna Dankers",
-        //     affiliation: "Postdoctoral Researcher, McGill University",
-        //     description: "Talk: Memorization: Myth or Mystery?",
-        //     link: "https://www.vernadankers.com/",
-        //     abstract: "In deep learning, the perspective on memorization of training examples is undergoing a paradigm shift. Previously linked to overfitting and poor generalization, memorization is now seen as benign, beneficial or concerning, depending on the data involved. This shift raises questions about the mystery that is memorization: what should and shouldn't models memorize, how is memorization implemented internally, and, more fundamentally, can we talk about memorization as a phenomenon that is separate from generalization or is this a myth? In this talk, I will provide you with the lay of the land on memorization analyses from a behavioural and model-internal perspective, reflecting on the pressing challenges it poses for interpretability research and why I think we should not shy away from them.",
-        //     bio: "Verna Dankers is a postdoctoral researcher at McGill University, Canada, working with Siva Reddy. She obtained her PhD from the University of Edinburgh, UK, as part of the UKRI Centre for Doctoral Training in Natural Language Processing, under the supervision of Ivan Titov. Her research focuses on understanding how large language models work through the lenses of compositionality, memorization and generalization. She received the 2025 outstanding paper award at IJCAI and the best paper award at CoNLL 2021 for her work on generalization in language models."
-        // }
+        {
+            image_path: "https://ivan-titov.org/ititov.jpg",
+            name: "Ivan Titov",
+            affiliation: "Professor, University of Edinburgh & University of Amsterdam",
+            description: "Talk: TBA",
+            link: "https://ivan-titov.org",
+            abstract: "…",
+            bio: "…"
+        },
+        {
+            image_path: "https://s44427.pcdn.co/wp-content/uploads/2024/07/Feucht-Sheridan_240410_Khoury_SheridanFeucht_IanMac_1448_Selected.jpg",
+            name: "Sheridan Feucht",
+            affiliation: "PhD student, Northeastern University",
+            description: "Talk: TBA",
+            link: "https://sfeucht.github.io",
+            abstract: "…",
+            bio: "…"
+        },
+        {
+            image_path: "https://lacoco-lab.github.io/home/authors/mhahn/avatar_hu2c1e3a58057cd4576c043ddea658feb3_641679_270x270_fill_q75_lanczos_center.jpg",
+            name: "Michael Hahn",
+            affiliation: "Professor, Saarland University",
+            description: "Talk: TBA",
+            link: "https://www.mhahn.info",
+            abstract: "…",
+            bio: "…"
+        }
     ],
     panelists: [],
     //     {
