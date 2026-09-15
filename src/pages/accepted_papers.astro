@@ -4,6 +4,7 @@ import site_config from '@/config/site_config.json';
 import accepted_papers from '@/config/accepted_papers.json';
 
 import Title from '@/components/mdx/Title.astro';
+import Abstract from '@/components/Abstract.astro';
 
 interface Props {
   title: string,
@@ -127,7 +128,11 @@ const {
                       :style={`openItem === ${index} ? 'max-height: ' + $refs.container${index}.scrollHeight + 'px' : ''`}
                     >
                       <div class="px-6 pb-6 text-zinc-600 leading-relaxed">
-                        <p>{item.abstract}</p>
+                        {item.abstract ? (
+                          <Abstract text={item.abstract} />
+                        ) : (
+                          <p class="italic">No abstract available.</p>
+                        )}
                       </div>
                     </div>
                   </li>

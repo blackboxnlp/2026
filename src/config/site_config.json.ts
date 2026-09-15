@@ -73,14 +73,14 @@ const site_config: SiteConfig = {
     date: "October 29th, 2026",
     nav_title: "BlackboxNLP",
     nav_items: [
-        // { name: "Accepted Papers", href: "/2026/accepted_papers" },
+        { name: "Accepted Papers", href: "/2026/accepted_papers" },
         { name: "Call for Papers", href: "/2026/call" },
         { name: "Reproducibility Track", href: "/2026/reproducibility" },
         { name: "News", href: "/2026/#news" },
         { name: "Program", href: "/2026/#program" },
     ],
     buttons: [
-        // { name: "Accepted Papers", href: "/2026/accepted_papers" },
+        { name: "Accepted Papers", href: "/2026/accepted_papers" },
         { name: "Call for Papers", href: "/2026/call" },
     ],
     anthology_link: "https://aclanthology.org/venues/blackboxnlp/",
