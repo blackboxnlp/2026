@@ -2,6 +2,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import { custom_style_components } from "@/layouts/MainLayout.astro";
 import site_config from "@/config/site_config.json";
+import type { PosterSessionTable } from "@/config/poster_sessions";
 
 import Hero from "@/components/Hero.astro";
 import Faq from "@/components/Faq.astro";
@@ -41,6 +42,7 @@ interface Props {
       end_time: string;
       description: string;
       papers: Array<{ title: string; authors: string }> | undefined;
+      poster_table?: PosterSessionTable;
     }>;
     invited_speakers: Array<{
       image_path: string;

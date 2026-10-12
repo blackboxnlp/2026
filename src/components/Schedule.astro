@@ -1,6 +1,7 @@
 ---
 import Subtitle from '@/components/mdx/Subtitle.astro';
 import { marked } from 'marked';
+import type { PosterSessionTable } from '@/config/poster_sessions';
 
 interface Props {
   events: Array<{
@@ -8,10 +9,21 @@ interface Props {
     end_time: string;
     description: string;
     papers: Array<{ title: string; authors: string }> | undefined;
+    poster_table?: PosterSessionTable;
   }>;
 }
 
 const { events } = Astro.props as Props;
+
+// Guard against the CSV and the program drifting apart (poster_sessions.ts is generated).
+for (const event of events ?? []) {
+  const table = event.poster_table;
+  if (table && (table.start_time !== event.start_time || table.end_time !== event.end_time)) {
+    console.warn(
+      `Schedule: poster list for "${event.description}" (${event.start_time}-${event.end_time}) was assigned to ${table.start_time}-${table.end_time}. Re-run "npm run posters" or move it to the right program item.`,
+    );
+  }
+}
 
 const safeMarkedParse = (text: string | null | undefined): string => {
   try {
@@ -64,6 +76,51 @@ const safeMarkedParse = (text: string | null | undefined): string => {
                   />
               </div>
             ))}
+
+            {/* Collapsible poster list (closed by default) */}
+            {event.poster_table && event.poster_table.posters.length > 0 && (
+              <details class="poster-table mt-4 rounded-lg border border-gray-200 bg-white">
+                <summary
+                  class="flex cursor-pointer select-none items-center justify-between gap-3 px-4 py-3 hover:bg-gray-50"
+                  title={`${event.poster_table.source} (estimated ${event.poster_table.start_time}-${event.poster_table.end_time})`}
+                >
+                  <span class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="text-sm font-medium text-gray-700">{event.poster_table.summary}</span>
+                    <span class="hidden text-xs text-gray-400 sm:inline">Click to expand</span>
+                  </span>
+                  <svg class="chevron h-4 w-4 flex-shrink-0 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M14.707 6.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L10 9.586l3.293-3.293a1 1 0 011.414 0z"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </summary>
+                <div class="max-h-[70vh] overflow-auto border-t border-gray-200">
+                  <table class="w-full border-collapse text-left align-top text-sm">
+                    <thead class="sticky top-0 z-10 bg-white text-xs font-semibold uppercase tracking-wide text-gray-500 shadow-[inset_0_-1px_0_rgba(0,0,0,0.08)]">
+                      <tr>
+                        <th class="min-w-64 px-4 py-2">Title</th>
+                        <th class="min-w-40 px-4 py-2">Authors</th>
+                        <th class="px-4 py-2" title="OpenReview paper ID and track"># / Track</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                      {event.poster_table.posters.map((poster) => (
+                        <tr class="hover:bg-blue-50/50">
+                          <td class="px-4 py-2 font-medium text-gray-900">{poster.title}</td>
+                          <td class="px-4 py-2 text-gray-600">{poster.authors}</td>
+                          <td class="whitespace-nowrap px-4 py-2 text-gray-500">
+                            <p class="tabular-nums">#{poster.id}</p>
+                            <p class="text-xs">{poster.track}</p>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            )}
           </div>
         </div>
       ))}
@@ -74,3 +131,28 @@ const safeMarkedParse = (text: string | null | undefined): string => {
     <em>Program under construction, stay tuned!</em>
   </p>
 )}
+
+<style>
+  .poster-table > summary {
+    list-style: none; /* hide the default disclosure triangle */
+  }
+  .poster-table > summary::-webkit-details-marker {
+    display: none;
+  }
+  .poster-table .chevron {
+    transition: transform 150ms ease-in-out;
+  }
+  .poster-table[open] .chevron {
+    transform: rotate(180deg);
+  }
+  /* Printing or copying the schedule should never be limited by the scroll box. */
+  @media print {
+    .poster-table > div {
+      max-height: none;
+      overflow: visible;
+    }
+    .poster-table:not([open]) > summary::after {
+      content: ' (collapsed - expand to print)';
+    }
+  }
+</style>

@@ -1,3 +1,5 @@
+import { poster_session_1, poster_session_2, type PosterSessionTable } from "./poster_sessions";
+
 interface SiteConfig {
     website_url: string,
     banner_path: string,
@@ -25,6 +27,8 @@ interface SiteConfig {
         end_time: string;
         description: string;
         papers: Array<{ title: string; authors: string }> | undefined;
+        /** Collapsible list of posters, built from the OpenReview assignments CSV. */
+        poster_table?: PosterSessionTable;
     }>;
     invited_speakers: Array<{
         image_path: string;
@@ -90,96 +94,106 @@ const site_config: SiteConfig = {
     github_link: "https://github.com/blackboxnlp",
     bluesky_link: "https://bsky.app/profile/blackboxnlp.bsky.social",
     program_events: [
-        // Example of program events
-        // {
-        //     "start_time": "8:00",
-        //     "end_time": "9:00",
-        //     "description": "*Virtual Poster Session 1 (1AM CEST, 7PM EST, 4PM PST)*",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "9:00",
-        //     "end_time": "9:10",
-        //     "description": "**Opening Remarks**",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "9:10",
-        //     "end_time": "10:00",
-        //     "description": "Invited talk by [**Quanshi Zhang**](https://sjtu-xai-lab.github.io/#people)",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "10:00",
-        //     "end_time": "10:30",
-        //     "description": "Oral presentations:",
-        //     papers: [
-        //         { title: "**Language Dominance in Multilingual Large Language Models**", authors: "_Nadav Shani, Ali Basirat_" },
-        //         { title: "**Circuit-Tracer: A New Library for Finding Feature Circuits**", authors: "_Michael Hanna, Mateusz Piotrowski, Jack Lindsey, Emmanuel Ameisen_" },
-        //     ]
-        // },
-        // {
-        //     "start_time": "10:30",
-        //     "end_time": "11:00",
-        //     "description": "Break ☕",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "11:00",
-        //     "end_time": "12:00",
-        //     "description": "**Poster Session 1**",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "12:00",
-        //     "end_time": "13:45",
-        //     "description": "Lunch 🥪",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "13:45",
-        //     "end_time": "14:30",
-        //     "description": "Invited talk by [**Verna Dankers**](https://www.vernadankers.com/)",
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "14:30",
-        //     "end_time": "14:45",
-        //     "description": "Oral presentation:",
-        //     papers: [
-        //         { title: "**Normative Reasoning in Large Language Models: A Comparative Benchmark from Logical and Modal Perspectives**", authors: "_Kentaro Ozeki, Risako Ando, Takanobu Morishita, Hirohiko Abe, Koji Mineshima, Mitsuhiro Okada_" },
-        //     ]
-        // },
-        // {
-        //     start_time: '14:45',
-        //     end_time: '15:30',
-        //     description: 'Panel discussion - **Evaluating Interpretability Methods: Challenges and Future Directions**',
-        //     papers: undefined
-        // },
-        // {
-        //     start_time: '15:30',
-        //     end_time: '16:00',
-        //     description: 'Break ☕',
-        //     papers: undefined
-        // },
-        // {
-        //     start_time: '16:00',
-        //     end_time: '17:00',
-        //     description: '**Poster Session 2**',
-        //     papers: undefined
-        // },
-        // {
-        //     start_time: '17:00',
-        //     end_time: '17:20',
-        //     description: 'Closing remarks and awards',
-        //     papers: undefined
-        // },
-        // {
-        //     "start_time": "17:30",
-        //     "end_time": "18:30",
-        //     "description": "*Virtual Poster Session 2 (10:30AM CEST, 4:30AM EST, 1:30AM PST)*",
-        //     papers: undefined
-        // }
+        {
+            "start_time": "9:00",
+            "end_time": "9:10",
+            "description": "**Opening Remarks**",
+            papers: undefined
+        },
+        {
+            "start_time": "9:10",
+            "end_time": "9:50",
+            "description": "Invited talk by **Sheridan Feucht**",
+            papers: undefined
+        },
+        {
+            "start_time": "9:50",
+            "end_time": "10:30",
+            "description": "Invited talk by **Ivan Titov**",
+            papers: undefined
+        },
+        {
+            "start_time": "10:30",
+            "end_time": "11:00",
+            "description": "Break ☕",
+            papers: undefined
+        },
+        {
+            "start_time": "11:00",
+            "end_time": "12:00",
+            "description": "Oral presentations 1:",
+            papers: [
+                {
+                    title: "**Data Attribution of Emergent Misalignment with Persona Features**",
+                    authors: "_Clemens Vetter, David Kaczér, Lucie Flek, Florian Mai_"
+                },
+                {
+                    title: "**How Much Sonority Structure Do Phonotactic Language Models Learn from Distribution?**",
+                    authors: "_Jia Can Xu, Mario Giulianelli_"
+                },
+                {
+                    title: "**A circuit for predicting hierarchical structure in-context in Large Language Models**",
+                    authors: "_Tankred Saanum, Can Demircan, Samuel J. Gershman, Eric Schulz_"
+                }
+            ]
+        },
+        {
+            "start_time": "12:00",
+            "end_time": "13:00",
+            "description": "**Poster Session 1**",
+            papers: undefined,
+            poster_table: poster_session_1
+        },
+        {
+            "start_time": "13:00",
+            "end_time": "14:00",
+            "description": "Lunch 🥪",
+            papers: undefined
+        },
+        {
+            "start_time": "14:00",
+            "end_time": "14:45",
+            "description": "Invited talk by **Michael Hahn**",
+            papers: undefined
+        },
+        {
+            "start_time": "14:45",
+            "end_time": "15:30",
+            "description": "Oral presentations 2:",
+            papers: [
+                {
+                    title: "**Probing for Knowledge Attribution in Large Language Models**",
+                    authors: "_Ivo Brink, Alexander Boer, Dennis Ulmer_"
+                },
+                {
+                    title: "**Probing Without Labels: Contrast-only Reproductions of Interpretability Results**",
+                    authors: "_Stefan F. Schouten, Peter Bloem_"
+                },
+                {
+                    title: "**Does Out-of-Sight Equal Out-of-Mind in CoT Monitorability?**",
+                    authors: "_Pedro Lobato Ferreira, Wilker Aziz, Ivan Titov_"
+                }
+            ]
+        },
+        {
+            start_time: "15:30",
+            end_time: "15:40",
+            description: "Best paper awards + Closing remarks",
+            papers: undefined
+        },
+        {
+            start_time: "15:40",
+            end_time: "16:00",
+            description: "Break ☕",
+            papers: undefined
+        },
+        {
+            start_time: "16:00",
+            end_time: "17:00",
+            description: "**Poster Session 2**",
+            papers: undefined,
+            poster_table: poster_session_2
+        },
     ],
     invited_speakers: [
         {
@@ -195,19 +209,19 @@ const site_config: SiteConfig = {
             image_path: "https://s44427.pcdn.co/wp-content/uploads/2024/07/Feucht-Sheridan_240410_Khoury_SheridanFeucht_IanMac_1448_Selected.jpg",
             name: "Sheridan Feucht",
             affiliation: "PhD student, Northeastern University",
-            description: "Talk: TBA",
+            description: "Talk: How do LLMs Read? Two Ways LLMs Map from Arbitrary Symbols to Words",
             link: "https://sfeucht.github.io",
-            abstract: "…",
+            abstract: "Reading is the process of mapping from arbitrary shapes to meaningful words, and comprises much of how we as humans experience language. But LLMs already live and breathe text. Is there any interesting sense in which they would ever learn to \"read\"? In this talk, I discuss my work on two settings in which LLMs must map from arbitrary symbols to meaningful word representations. First, despite the fact that tokens in LLMs typically correspond to words, LLMs often still must learn that certain arbitrary token combinations (e.g. \"pat\", \"rolling\") correspond to a single semantic unit (\"patrolling\"). In our work on the \"dual-route model of induction\", we use such multi-token words to separate two distinct mechanisms for copying text in-context: a semantic pathway and a literal pathway, analogous to the dual-route model of reading in humans. Switching gears to VLMs, I then discuss our recent work on optical character recognition (OCR): how VLMs map from words in pixel space to language space. We identify VLM components responsible for reading text contained in images. Surprisingly, these attention heads can also verbalize semantics of image tokens that do not contain text. We use this finding to create a \"logit lens for image tokens\" that reveals alignment between image and language space in early VLM layers. Taken together, these two lines of work illustrate how LLMs can \"understand\" the semantics of words independent of their surface-level features.",
             bio: "…"
         },
         {
             image_path: "https://lacoco-lab.github.io/home/authors/mhahn/avatar_hu2c1e3a58057cd4576c043ddea658feb3_641679_270x270_fill_q75_lanczos_center.jpg",
             name: "Michael Hahn",
             affiliation: "Professor, Saarland University",
-            description: "Talk: TBA",
+            description: "Talk: From Transformers to Programs and Automata",
             link: "https://www.mhahn.info",
-            abstract: "…",
-            bio: "…"
+            abstract: "How can we turn a Transformer’s computations into an explicit and interpretable representation of what it does? I will explore how we can map model computations to formal representations as programs and automata. I will first discuss techniques for extracting explicit representations from Transformers via behavioral queries alone. I will then present a pipeline for decompiling transformers into programs using their weights. In the last part, I will examine what observable thinking traces reveal (or not) about the computations underlying a model’s answers. Taken together, these results address a fundamental question: when can we recover faithful representations of Transformer computations, and what remains out of reach?",
+            bio: "Michael Hahn received his PhD from Stanford University in 2022, advised by Dan Jurafsky and Judith Degen. He is now a professor at Saarland University, Germany. His research focuses on the theoretical foundations and inner workings of LLMs."
         }
     ],
     panelists: [],
@@ -324,7 +338,11 @@ const site_config: SiteConfig = {
         // {
         //     question: "How are shared task reports evaluated?",
         //     answer: "Shared task reports will be evaluated by the workshop organizers to assess whether they meet the requirements for archival publication."
-        // }
+        // },
+        {
+            question: "Is there an option to present the paper virtually?",
+            answer: "Unfortunately, this year's BlackboxNLP workshop does not feature any virtual presentation slots. You have to register for the workshop as a presenting author for your paper to be added to the proceedings, as per the guidelines for the conference. However, you do not necessarily have to attend, and people have in the past had someone else (also non-authors) hang their poster."
+        }
     ]
 };
 

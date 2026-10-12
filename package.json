@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "posters": "node scripts/generate_poster_sessions.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.4",
