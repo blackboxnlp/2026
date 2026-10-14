@@ -23,7 +23,7 @@ export const poster_session_1: PosterSessionTable = {
     start_time: "12:00",
     end_time: "13:00",
     source: "Lunch poster session",
-    summary: "44 posters (25 Main Track, 10 Reproducibility Track, 5 ARR Submission, 4 Extended Abstracts)",
+    summary: "45 posters (25 Main Track, 11 Reproducibility Track, 5 ARR Submission, 4 Extended Abstracts)",
     posters: [
             {
                 id: "7",
@@ -114,6 +114,12 @@ export const poster_session_1: PosterSessionTable = {
                 title: "Compact Language, Complex Model Shifts: How and Where Ambiguity and Underspecification Affect LLMs",
                 authors: "Michaela Regneri, Nina Scheller, Sören Laue",
                 track: "Main Track"
+            },
+            {
+                id: "51",
+                title: "Reproducing the Results, But not the Interpretations: Evidence for Artifacts in Automatic Creativity Scoring with LLMs",
+                authors: "Carl Hermany, Omar Momen, Sina Zarrieß",
+                track: "Reproducibility Track"
             },
             {
                 id: "53",
@@ -296,7 +302,7 @@ export const poster_session_2: PosterSessionTable = {
     start_time: "16:00",
     end_time: "17:00",
     source: "Afternoon poster session",
-    summary: "43 posters (21 Main Track, 9 Reproducibility Track, 8 Extended Abstracts, 5 ARR Submission)",
+    summary: "41 posters (20 Main Track, 8 Reproducibility Track, 8 Extended Abstracts, 5 ARR Submission)",
     posters: [
             {
                 id: "4",
@@ -375,12 +381,6 @@ export const poster_session_2: PosterSessionTable = {
                 title: "When Context Misleads: Surprisal, Energy and Attention Entropy as Metrics of Coherence Illusions in LLMs",
                 authors: "Ece Takmaz, Nitin Kumar, Li Kloostra, Jakub Dotlacil",
                 track: "ARR Submission"
-            },
-            {
-                id: "51",
-                title: "Reproducing the Results, But not the Interpretations: Evidence for Artifacts in Automatic Creativity Scoring with LLMs",
-                authors: "Carl Hermany, Omar Momen, Sina Zarrieß",
-                track: "Reproducibility Track"
             },
             {
                 id: "54",
@@ -530,12 +530,6 @@ export const poster_session_2: PosterSessionTable = {
                 id: "283",
                 title: "Your Judge Inherits Your Prompt: In-Context Label Bias in an LLM-as-Judge Is Directional, Not Symmetric",
                 authors: "Abdullah Ahmad, Ahmed J O Ahmed, Luca Citi",
-                track: "Main Track"
-            },
-            {
-                id: "284",
-                title: "When Activation Oracles Learn Not to Read: Concept-Specific Blind Spots in Fine-Tuned Oracles",
-                authors: "Tobias Bersia, Tatiana Gaintseva",
                 track: "Main Track"
             },
             {
