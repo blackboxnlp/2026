@@ -200,9 +200,9 @@ const site_config: SiteConfig = {
             image_path: "https://ivan-titov.org/ititov.jpg",
             name: "Ivan Titov",
             affiliation: "Professor, University of Edinburgh & University of Amsterdam",
-            description: "Talk: TBA",
+            description: "Talk: Post-training for reasoning in LLMs: learning vs reshaping, generalization and failure modes",
             link: "https://ivan-titov.org",
-            abstract: "…",
+            abstract: "What does post-training for reasoning do to an LLM? It is often argued that it works less by creating new capabilities than by ‘reshaping access’ to capabilities already acquired during pre-training. I will first introduce a formalization of this superficial alignment hypothesis through algorithmic information theory, which lets us relate different ways of adapting models (fine-tuning, in-context learning, prompting) within one framework. The verdict is mixed: most of the gains from post-training cost almost no information but the final gains cost a lot. I will then look inside supervised and reinforcement fine-tuning. SFT adds missing behaviours but moves the model far and may generalize worse; RFT changes the model selectively and generalizes better. These complementary strengths motivate us to build a simple hybrid that uses demonstrations only where exploration fails. I will also show one source of RFT’s selectivity: standard GRPO secretly does sparse token-level credit assignment (and a common default in RL frameworks nearly breaks it!). Finally, the reward-driven optimization can favour answers that look right while the chain of thought behind them is unfaithful or fabricated; I will discuss evidence and conditions for this and a mitigation that gives reward models an interpretability signal from counterfactual rollouts.",
             bio: "…"
         },
         {
