@@ -140,7 +140,7 @@ const site_config: SiteConfig = {
         {
             "start_time": "12:00",
             "end_time": "13:00",
-            "description": "**Poster Session 1**",
+            "description": "**Poster Session 1** @ Hall H, Boards 1–80",
             papers: undefined,
             poster_table: poster_session_1
         },
@@ -190,7 +190,7 @@ const site_config: SiteConfig = {
         {
             start_time: "16:00",
             end_time: "17:00",
-            description: "**Poster Session 2**",
+            description: "**Poster Session 2** @ Hall H, Boards 51-130",
             papers: undefined,
             poster_table: poster_session_2
         },
